@@ -115,9 +115,6 @@ class _QuestionScreenState extends State<QuestionScreen> {
     final current = questions[step];
 
     return CustomScaffold(
-      appBar: AppBar(
-        title: Text('질문 ${step + 1}/${questions.length}'),
-      ),
       body: isLoading
           ? const Center(
         child: Column(
@@ -134,6 +131,15 @@ class _QuestionScreenState extends State<QuestionScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Center(
+              child: Text(
+                '${step + 1}/${questions.length}',
+                style: TextStyle(
+                  color: Color(0xFFFFFFFF),
+                ),
+              ),
+            ),
+
             SizedBox(
               height: 150,
             ),
